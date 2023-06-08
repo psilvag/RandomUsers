@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-/*RESPONSIVE */
+/*************************RESPONSIVE****************************/
 
 @media screen and (max-width:728px){
     .article-user-info .article-buttons {
