@@ -25,13 +25,15 @@ function App() {
   console.log(randomUser);
 
   return (
-       <div className='user_info'>
-        <h1>Random Users</h1>
+       <div className='random-user'>
+        <h1>RANDOM USER GENERATOR</h1>
+        
         <UserInfo
         randomUser={randomUser}
         stateButton={stateButton}/>
-        <button onClick={handleClick} className='user_random_button'>New User</button>
-        </div>
+
+        <button onClick={handleClick} className='user-random-button'>New User</button>
+      </div>
        
        
   )

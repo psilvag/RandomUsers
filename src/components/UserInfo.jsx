@@ -1,4 +1,11 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState,useEffect} from 'react'
+import '../styles/UserInfo.style.css'
+import { FaUser} from "react-icons/fa";
+import {AiTwotoneMail} from "react-icons/ai"
+import{FaBirthdayCake} from "react-icons/fa"
+import{RiGpsLine} from "react-icons/ri"
+import{BsTelephoneFill} from "react-icons/bs"
+import{RiLockPasswordFill} from "react-icons/ri"
 
 
 
@@ -58,12 +65,12 @@ const UserInfo = ({randomUser,stateButton}) => {
  
   
   return (
-   <article >
-    <header>
+   <article className='article-user-info'>
+    <header className='header-article'>
     <img src={randomUser?.picture.large} alt="imageUser"/>
     </header>
 
-    <div>
+    <div className='article-greet'>
     <h3>Hi, my {tagName} is:</h3>
     
     <h2>{infoUser.title==="" ? randomUser?.name.title : infoUser.title} { infoUser.first==="" ? randomUser?.name.first : infoUser.first} {infoUser.last==="" ? randomUser?.name.last : infoUser.last}</h2>
@@ -74,14 +81,14 @@ const UserInfo = ({randomUser,stateButton}) => {
     <h2>{infoUser.password}</h2>
     </div>
 
-    <div>
+    <div className='article-buttons'>
     
-    <button onMouseOver={handleOverName}>NAME</button>
-    <button onMouseOver={handleOverEmail}>EMAIL</button>
-    <button onMouseOver={handleOverBirthday}>BIRTHDAY</button>
-    <button onMouseOver={handleOverAddress}>ADDRESS</button>
-    <button onMouseOver={handleOverPhone}>PHONE</button>
-    <button onMouseOver={handleOverPassword}>PASSWORD</button>
+    <span onMouseOver={handleOverName}><FaUser style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
+    <span onMouseOver={handleOverEmail}><AiTwotoneMail style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
+    <span onMouseOver={handleOverBirthday}><FaBirthdayCake style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
+    <span onMouseOver={handleOverAddress}><RiGpsLine style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
+    <span onMouseOver={handleOverPhone}><BsTelephoneFill style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
+    <span onMouseOver={handleOverPassword}><RiLockPasswordFill style={{color:'#83BA43', fontSize:"28px", hover:'green'}}/></span>
     </div> 
 
     </article>
