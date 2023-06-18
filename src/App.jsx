@@ -8,34 +8,34 @@ import UserInfo from './components/UserInfo'
 
 
 function App() {
-  const [randomUser,setRandomUser]=useState()
-  const [stateButton,setStateButton]=useState(true)
+  const [randomUser, setRandomUser] = useState()
+  const [stateButton, setStateButton] = useState(true)
 
-  useEffect(()=>{
-    const URL="https://randomuser.me/api/"
+  useEffect(() => {
+    const URL = "https://randomuser.me/api/"
     axios.get(URL)
-    .then(res=>setRandomUser(res.data.results[0]))
-    .catch(error=>console.log(error))
-  },[stateButton])
-  
-   const handleClick=()=>{
-    setStateButton(!stateButton)
-   }
+      .then(res => setRandomUser(res.data.results[0]))
+      .catch(error => console.log(error))
+  }, [stateButton])
 
-  console.log(randomUser);
+  const handleClick = () => {
+    setStateButton(!stateButton)
+  }
 
   return (
-       <div className='random-user'>
-        <h1>RANDOM USER GENERATOR</h1>
-        
-        <UserInfo
-        randomUser={randomUser}
-        stateButton={stateButton}/>
+    <div className='random-user'>
+      <h1>Random user Generator</h1>
 
-        <button onClick={handleClick} className='user-random-button'>New User</button>
-      </div>
-       
-       
+
+      <UserInfo
+        randomUser={randomUser}
+        stateButton={stateButton} />
+
+      <button onClick={handleClick} className='user-random-button'>New User</button>
+
+    </div>
+
+
   )
 }
 
